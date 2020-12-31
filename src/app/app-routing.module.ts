@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HttpsComponent } from './pages/https/https.component';
 import { LoaderComponent } from './pages/loader/loader.component';
+import { ConvertComponent } from './pages/convert/convert.component';
 
 const routes: Routes = [
     {
@@ -18,11 +19,15 @@ const routes: Routes = [
     {
         path: 'loader',
         component: LoaderComponent
+    },
+    {
+        path: 'convert',
+        component: ConvertComponent
     }
 ];
 
 @NgModule({
-    declarations: [HttpsComponent, LoaderComponent],
+    declarations: [HttpsComponent, LoaderComponent, ConvertComponent],
     imports: [CommonModule, RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
