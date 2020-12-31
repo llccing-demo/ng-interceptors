@@ -7,6 +7,7 @@ import { LoaderComponent } from './pages/loader/loader.component';
 import { ConvertComponent } from './pages/convert/convert.component';
 import { HeadersComponent } from './pages/headers/headers.component';
 import { NotifyComponent } from './pages/notify/notify.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 const routes: Routes = [
     {
@@ -33,6 +34,10 @@ const routes: Routes = [
     {
         path: 'notify',
         component: NotifyComponent
+    },
+    {
+        path: 'error',
+        component: ErrorComponent
     }
 ];
 
@@ -42,7 +47,8 @@ const routes: Routes = [
         LoaderComponent,
         ConvertComponent,
         HeadersComponent,
-        NotifyComponent
+        NotifyComponent,
+        ErrorComponent
     ],
     imports: [CommonModule, RouterModule.forRoot(routes)],
     exports: [RouterModule]

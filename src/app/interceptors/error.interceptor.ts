@@ -4,28 +4,31 @@ import {
     HttpEvent,
     HttpRequest,
     HttpHandler,
-    HttpResponse
+    HttpErrorResponse
 } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Injectable()
-export class NotifyInterceptor implements HttpInterceptor {
+export class ErrorInterceptor implements HttpInterceptor {
     constructor(private nzMessageService: NzMessageService) {}
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (!req.url.includes('posts/2')) {
+        if (!req.url.includes('error')) {
             return next.handle(req);
         }
 
-        console.log('notify interceptor');
+        console.log('error interceptor');
 
         return next.handle(req).pipe(
-            tap((event: HttpEvent<any>) => {
-                if (event instanceof HttpResponse && event.status === 200) {
-                    this.nzMessageService.success('调用成功！');
+            retry(2),
+            catchError((err: HttpErrorResponse) => {
+                if (err.status !== 401) {
+                    this.nzMessageService.error(err.message);
                 }
+
+                return throwError(err);
             })
         );
     }

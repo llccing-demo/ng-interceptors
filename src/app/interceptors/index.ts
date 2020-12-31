@@ -5,6 +5,7 @@ import { LoaderInterceptor } from './loader.interceptor';
 import { ConvertInterceptor } from './convert.interceptor';
 import { HeadersInterceptor } from './headers.interceptor';
 import { NotifyInterceptor } from './notify.interceptor';
+import { ErrorInterceptor } from './error.interceptor';
 
 export const httpInterceptorProviders = [
     // export const httpInterceptorProviders: [{ provide: typeof HTTP_INTERCEPTORS; useClass: any; multi: any }] = [
@@ -12,5 +13,6 @@ export const httpInterceptorProviders = [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ConvertInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: NotifyInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: NotifyInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
 ];
