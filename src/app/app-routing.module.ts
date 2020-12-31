@@ -8,6 +8,7 @@ import { ConvertComponent } from './pages/convert/convert.component';
 import { HeadersComponent } from './pages/headers/headers.component';
 import { NotifyComponent } from './pages/notify/notify.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { AnalysisComponent } from './pages/analysis/analysis.component';
 
 const routes: Routes = [
     {
@@ -38,6 +39,10 @@ const routes: Routes = [
     {
         path: 'error',
         component: ErrorComponent
+    },
+    {
+        path: 'analysis',
+        component: AnalysisComponent
     }
 ];
 
@@ -48,7 +53,8 @@ const routes: Routes = [
         ConvertComponent,
         HeadersComponent,
         NotifyComponent,
-        ErrorComponent
+        ErrorComponent,
+        AnalysisComponent
     ],
     imports: [CommonModule, RouterModule.forRoot(routes)],
     exports: [RouterModule]
