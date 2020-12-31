@@ -12,6 +12,7 @@ import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 registerLocaleData(zh);
 
@@ -23,7 +24,8 @@ registerLocaleData(zh);
         HttpClientModule,
         FormsModule,
         BrowserAnimationsModule,
-        NzButtonModule
+        NzButtonModule,
+        NzMessageModule
     ],
     providers: [httpInterceptorProviders, { provide: NZ_I18N, useValue: zh_CN }],
     bootstrap: [AppComponent]

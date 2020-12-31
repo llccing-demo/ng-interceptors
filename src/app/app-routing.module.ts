@@ -6,6 +6,7 @@ import { HttpsComponent } from './pages/https/https.component';
 import { LoaderComponent } from './pages/loader/loader.component';
 import { ConvertComponent } from './pages/convert/convert.component';
 import { HeadersComponent } from './pages/headers/headers.component';
+import { NotifyComponent } from './pages/notify/notify.component';
 
 const routes: Routes = [
     {
@@ -28,11 +29,21 @@ const routes: Routes = [
     {
         path: 'headers',
         component: HeadersComponent
+    },
+    {
+        path: 'notify',
+        component: NotifyComponent
     }
 ];
 
 @NgModule({
-    declarations: [HttpsComponent, LoaderComponent, ConvertComponent, HeadersComponent],
+    declarations: [
+        HttpsComponent,
+        LoaderComponent,
+        ConvertComponent,
+        HeadersComponent,
+        NotifyComponent
+    ],
     imports: [CommonModule, RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
