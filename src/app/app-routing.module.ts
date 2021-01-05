@@ -10,6 +10,7 @@ import { NotifyComponent } from './pages/notify/notify.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AnalysisComponent } from './pages/analysis/analysis.component';
 import { MockComponent } from './pages/mock/mock.component';
+import { CacheComponent } from './pages/cache/cache.component';
 
 const routes: Routes = [
     {
@@ -48,6 +49,10 @@ const routes: Routes = [
     {
         path: 'mock',
         component: MockComponent
+    },
+    {
+        path: 'cache',
+        component: CacheComponent
     }
 ];
 
@@ -60,7 +65,8 @@ const routes: Routes = [
         NotifyComponent,
         ErrorComponent,
         AnalysisComponent,
-        MockComponent
+        MockComponent,
+        CacheComponent
     ],
     imports: [CommonModule, RouterModule.forRoot(routes)],
     exports: [RouterModule]
