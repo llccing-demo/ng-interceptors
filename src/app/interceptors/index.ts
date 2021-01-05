@@ -9,6 +9,7 @@ import { ErrorInterceptor } from './error.interceptor';
 import { AnalysisInterceptor } from './analysis.interceptor';
 import { MockInterceptor } from './mock.interceptor';
 import { CacheInterceptor } from './cache.interceptor';
+import { AuthInterceptor } from './auth.interceptor';
 
 export const httpInterceptorProviders = [
     // export const httpInterceptorProviders: [{ provide: typeof HTTP_INTERCEPTORS; useClass: any; multi: any }] = [
@@ -20,5 +21,6 @@ export const httpInterceptorProviders = [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AnalysisInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: MockInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
 ];
