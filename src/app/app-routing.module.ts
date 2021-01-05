@@ -9,6 +9,7 @@ import { HeadersComponent } from './pages/headers/headers.component';
 import { NotifyComponent } from './pages/notify/notify.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AnalysisComponent } from './pages/analysis/analysis.component';
+import { MockComponent } from './pages/mock/mock.component';
 
 const routes: Routes = [
     {
@@ -43,6 +44,10 @@ const routes: Routes = [
     {
         path: 'analysis',
         component: AnalysisComponent
+    },
+    {
+        path: 'mock',
+        component: MockComponent
     }
 ];
 
@@ -54,7 +59,8 @@ const routes: Routes = [
         HeadersComponent,
         NotifyComponent,
         ErrorComponent,
-        AnalysisComponent
+        AnalysisComponent,
+        MockComponent
     ],
     imports: [CommonModule, RouterModule.forRoot(routes)],
     exports: [RouterModule]
